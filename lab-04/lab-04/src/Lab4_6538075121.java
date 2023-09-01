@@ -16,7 +16,7 @@ public class Lab4_6538075121 {
 }
 
 abstract class Shape {
-    private String color;
+    protected String color;
 
     public Shape(String color) {
         this.color = color;
