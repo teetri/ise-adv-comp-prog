@@ -20,7 +20,7 @@ public class SimpleTransactionManager implements TransactionManager {
 
   public boolean transferFunds(String senderWalletId, String receiverWalletId, double amount) throws Exception {
     if (!isValidWallet(senderWalletId)) {
-      throw new IllegalArgumentException("Invalid wallet ID.");
+      throw new IllegalArgumentException("Sender wallet does not exist.");
     }
 
     if (getBalance(senderWalletId) < amount && senderWalletId != "Wallet0") {
