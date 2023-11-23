@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Paragraphs with Buttons</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="paragraphInput" placeholder="Enter text" />
+            <button onclick="addParagraph()">Add Paragraph</button>
+        </div>
+
+        <div id="paragraphContainer"></div>
+
+        <script>
+            function addParagraph() {
+                // Get the input value
+                const inputValue = document.getElementById("paragraphInput").value;
+
+                // Create a new paragraph element
+                const paragraph = document.createElement("p");
+                paragraph.textContent = inputValue;
+
+                // Create "Edit" button
+                const editButton = document.createElement("button");
+                editButton.textContent = "Edit";
+                editButton.onclick = function () {
+                    const updatedText = prompt("Enter the updated text:", paragraph.textContent);
+                    if (updatedText !== null) {
+                        paragraph.textContent = updatedText;
+                    }
+                };
+
+                // Create "Delete" button
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.onclick = function () {
+                    paragraph.remove();
+                    editButton.remove();
+                    deleteButton.remove();
+                };
+
+                // Append paragraph and buttons to the container
+                const paragraphContainer = document.getElementById("paragraphContainer");
+                paragraphContainer.appendChild(paragraph);
+                paragraphContainer.appendChild(editButton);
+                paragraphContainer.appendChild(deleteButton);
+            }
+        </script>
+    </body>
+</html>
