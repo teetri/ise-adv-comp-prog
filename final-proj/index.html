@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Courgette|Noto+Sans" />
+        <script src="script.js"></script>
+        <title>dicty</title>
+    </head>
+    <body id="background">
+        <div id="container">
+            <div id="header">dicty</div>
+            <form id="input-container">
+                <div id="left-spacer"></div>
+                <input type="text" name="input" id="input" placeholder="Enter a word here" /><button type="submit" id="submit-button">search</button>
+            </form>
+            <div id="result-container">
+                <div id="not-found" hidden>
+                    <p id="not-found-title">not found</p>
+                    <p>sorry, we could not find the word</p>
+                </div>
+                <div id="result">
+                    <p id="word">TestWord</p>
+                    <div id="content-container">
+                        <div class="part-container">
+                            <p class="part">[noun]</p>
+                            <p class="definition">Lorem ipsum dolor sit amet.</p>
+                            <p class="definition">
+                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, fuga id. Pariatur velit consequuntur ducimus? Laudantium
+                                quisquam ipsum hic omnis.
+                            </p>
+                        </div>
+                        <div class="part-container">
+                            <p class="part">[noun]</p>
+                            <p class="definition">Lorem ipsum dolor sit amet.</p>
+                            <p class="definition">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
