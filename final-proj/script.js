@@ -23,8 +23,12 @@ const handleSearch = async (e) => {
             document.getElementById("not-found-text").textContent = `sorry, we could not find the word "${word}"`;
             document.getElementById("input").value = "";
         } else {
+            document.getElementById("word").replaceChildren();
+            document.getElementById("content-container").replaceChildren();
+
             setResult("found");
             document.getElementById("input").value = "";
+
             document.getElementById("word").textContent = data[0].word;
             const contentContainer = document.getElementById("content-container");
             const meanings = data[0].meanings;
