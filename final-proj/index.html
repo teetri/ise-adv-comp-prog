@@ -10,32 +10,19 @@
     <body id="background">
         <div id="container">
             <div id="header">dicty</div>
-            <form id="input-container">
+            <div id="input-form">
                 <div id="left-spacer"></div>
-                <input type="text" name="input" id="input" placeholder="Enter a word here" /><button type="submit" id="submit-button">search</button>
-            </form>
+                <input type="text" name="input" id="input" placeholder="type a word here" />
+                <button type="button" id="submit-button" onclick="handleSearch()">search</button>
+            </div>
             <div id="result-container">
-                <div id="not-found" hidden>
+                <div id="not-found">
                     <p id="not-found-title">not found</p>
-                    <p>sorry, we could not find the word</p>
+                    <p id="not-found-text">sorry, we could not find the word</p>
                 </div>
                 <div id="result">
-                    <p id="word">TestWord</p>
-                    <div id="content-container">
-                        <div class="part-container">
-                            <p class="part">[noun]</p>
-                            <p class="definition">Lorem ipsum dolor sit amet.</p>
-                            <p class="definition">
-                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, fuga id. Pariatur velit consequuntur ducimus? Laudantium
-                                quisquam ipsum hic omnis.
-                            </p>
-                        </div>
-                        <div class="part-container">
-                            <p class="part">[noun]</p>
-                            <p class="definition">Lorem ipsum dolor sit amet.</p>
-                            <p class="definition">Lorem ipsum dolor sit amet.</p>
-                        </div>
-                    </div>
+                    <p id="word"></p>
+                    <div id="content-container"></div>
                 </div>
             </div>
         </div>
