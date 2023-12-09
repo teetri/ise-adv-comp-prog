@@ -1,9 +1,13 @@
 const setResult = (state) => {
     document.getElementById("not-found").style.display = "none";
+    document.getElementById("loading").style.display = "none";
+
     document.getElementById("result").style.display = "none";
 
     if (state === "not-found") {
         document.getElementById("not-found").style.display = "flex";
+    } else if (state === "loading") {
+        document.getElementById("loading").style.display = "flex";
     } else if (state === "found") {
         document.getElementById("result").style.display = "flex";
     }
@@ -11,6 +15,7 @@ const setResult = (state) => {
 
 const handleSearch = async (e) => {
     let word = document.getElementById("input").value;
+    setResult("loading");
     if (word == "" || word === null) {
         setResult(0);
         return;
@@ -51,4 +56,13 @@ const handleSearch = async (e) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+window.onload = () => {
+    const inputBox = document.getElementById("input");
+    inputBox.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            document.getElementById("submit-button").click();
+        }
+    });
 };
